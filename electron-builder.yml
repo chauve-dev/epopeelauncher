@@ -1,0 +1,51 @@
+appId: 'epopeelauncher'
+productName: 'Epopee Launcher'
+artifactName: '${productName}-setup-${version}.${ext}'
+
+copyright: ''
+
+asar: true
+compression: 'maximum'
+
+files:
+  - '!{dist-electron,.gitignore,.vscode,docs,dev-app-update.yml,.travis.yml,.nvmrc,.eslintrc.json,build.js}'
+
+extraResources:
+  - 'libraries'
+
+# Windows Configuration
+win: 
+  target: 
+    - target: 'nsis'
+      arch: 'x64'
+
+# Windows Installer Configuration
+nsis:
+  oneClick: false
+  perMachine: false
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+
+# macOS Configuration
+mac:
+  target:
+    - target: 'dmg'
+      arch:
+        - 'x64'
+        - 'arm64'
+  artifactName: '${productName}-setup-${version}-${arch}.${ext}'
+  category: 'public.app-category.games'
+
+# Linux Configuration
+linux: 
+  target: 'AppImage'
+  maintainer: 'Jeantet Joey'
+  vendor: 'Jeantet Joey'
+  synopsis: 'Lanceur Epopee Libre Minecraft '
+  description: 'Lanceur custom de l epopee libre.'
+  category: 'Game'
+
+
+directories:
+  buildResources: 'build'
+  output: 'dist-electron'
