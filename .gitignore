@@ -2,7 +2,7 @@ node_modules
 .vscode
 dist
 dist-electron
-./forge.jar
-./ressources
-./ressources.zip
-./minecraft
+forge.jar
+ressources
+minecraft
+ressources.zip
