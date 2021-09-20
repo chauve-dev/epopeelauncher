@@ -1,6 +1,6 @@
 appId: 'epopeelauncher'
 productName: 'Epopee Launcher'
-artifactName: '${productName}-setup-${version}.${ext}'
+artifactName: '${productName}-${version}.${ext}'
 
 copyright: ''
 
@@ -16,7 +16,7 @@ extraResources:
 # Windows Configuration
 win: 
   target: 
-    - target: 'nsis'
+    - target: 'portable'
       arch: 'x64'
 
 # Windows Installer Configuration

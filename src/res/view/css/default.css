@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/Poppins-Light.ttf");
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+
+}
+
+input {
+    font-family: 'Poppins', sans-serif;
+}
+
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+  }

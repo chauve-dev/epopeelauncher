@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>L'épopée libre</title>
+    <link rel="stylesheet" href="./css/default.css" />
+    <link rel="stylesheet" href="./css/titlebar.css" />
+    <link rel="stylesheet" href="./css/content.css" />
+  </head>
+  <body>
+    <div class="titlebar">
+      <img class="app-icon" src="img/icon.png" />
+      <div style="display: flex">
+        <div onclick="window.api.send('minimize', {})" class="icon">
+          <img src="img/minimize.svg" />
+        </div>
+        <div onclick="window.api.send('maximize', {})" class="icon">
+          <img src="img/maximize.svg" />
+        </div>
+        <div onclick="window.api.send('close', {})" class="icon close">
+          <img src="img/cross.svg" />
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div style="display: none;" class="loader">
+        <svg
+          version="1.1"
+          id="L9"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          viewBox="0 0 100 100"
+          enable-background="new 0 0 0 0"
+          xml:space="preserve"
+        >
+          <path
+            fill="#fff"
+            d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"
+          >
+            <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="rotate"
+              dur="1s"
+              from="0 50 50"
+              to="360 50 50"
+              repeatCount="indefinite"
+            />
+          </path>
+        </svg>
+        <span id="loaderpercent">0%</span>
+        <p>Connexion au compte microsoft</p>
+      </div>
+      <div class="left">
+        <div class="header">
+          <h1>L'épopée libre</h1>
+        </div>
+        <div style="flex-grow: 0.1"></div>
+        <div class="toolbar">
+          <img src="img/cog.svg" />
+          <img src="img/globe.svg" />
+        </div>
+        <div class="spacer"></div>
+        <div class="main-container">
+          <form action="">
+            <div class="input-group">
+              <label for="">Email</label>
+              <input type="text" name="name" id="name" />
+            </div>
+            <div class="input-group">
+              <label for="">Mot de passe</label>
+              <input type="password" />
+            </div>
+            <a class="input-link" onclick="window.api.send('microsoft', {}); document.querySelector('.loader').style.display = 'flex';">
+              Je possède un compte Microsoft
+            </a>
+            <div class="input-group">
+              <input onclick="window.api.send('play_mojang', {})" type="submit" value="Jouer" />
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="right">
+        <div class="news-container"></div>
+      </div>
+    </div>
+
+    <script src="javascript/moment.js"></script>
+    <script src="javascript/front.js"></script>
+    <script src="../renderer.js"></script>
+  </body>
+</html>

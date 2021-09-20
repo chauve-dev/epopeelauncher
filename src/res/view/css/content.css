@@ -1,0 +1,169 @@
+.content {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: #fff;
+    background-color: #1C1C1CEE;
+}
+
+.content .left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/fond.png);
+    background-position: center;
+    background-size: cover;
+    min-width: 400px;
+    width: 27vw;
+}
+
+
+.content .right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    min-width: 400px;
+    width: 73vw;
+}
+
+@media screen and (max-width: 1200px) {
+    .content .right {
+        left: 400px;
+        width: auto;
+    }
+}
+
+.spacer {
+    flex-grow: 0.7;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-group input {
+    color: #fff;
+    background-color: #ffffFF50;
+    border: 1px;
+    border-radius: 10px;;
+    padding: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-group input[type="submit"] {
+    cursor: pointer;
+}
+
+.input-group input:hover {
+    background-color: #ffffFF30;
+}
+
+.input-group {
+    margin: 20px;
+    width: 60%;;
+}
+
+.main-container {
+    padding-bottom: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.content .left .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toolbar {
+    min-height: 50px;
+    background-color: #FFFFFF50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1C1C1CEE;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.loader > svg{
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    display:inline-block;
+  }
+
+
+.news-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+
+.news {
+    width: 70%;
+    background-color: #111111;
+    margin: 20px;
+    padding: 14px;
+    border-radius: 5px;
+}
+
+.input-link {
+    color: white;
+    cursor: pointer;
+}
+
+.input-link:hover {
+    color: #0dc099;
+}
+
+::-webkit-scrollbar {
+    background: none;
+}
+
+::-webkit-scrollbar-button {
+    background: none;
+}
+
+::-webkit-scrollbar-corner {
+    background: none;
+}
+::-webkit-scrollbar-thumb {
+    background: none;
+}

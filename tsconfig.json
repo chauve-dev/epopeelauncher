@@ -11,5 +11,8 @@
     },
     "include": [
       "src/**/*", "decs.d.ts"
+    ],
+    "exclude": [
+      "node_modules"
     ]
   }

@@ -8,7 +8,7 @@
     "build": "tsc",
     "watch": "tsc -w",
     "lint": "eslint -c .eslintrc --ext .ts ./src",
-    "copy-files": "copyfiles -u 1 src/**/*.ejs src/**/*.css dist/",
+    "copy-files": "copyfiles -u 1 src/**/*.html src/**/*.css src/**/*.svg src/**/*.ttf src/**/*.png src/**/*.js src/**/*.jar dist/",
     "start": "npm run clean && npm run build && npm run copy-files && electron ./dist/main.js",
     "clean": "rimraf dist/",
     "dist": "electron-builder build",
@@ -29,9 +29,12 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^4.31.0",
     "@typescript-eslint/parser": "^4.31.0",
-    "typescript": "^4.4.3",
+    "axios": "^0.21.4",
     "ejs": "^3.1.6",
-    "ejs-electron": "^2.1.1"
+    "ejs-electron": "^2.1.1",
+    "minecraft-launcher-core": "^3.16.8",
+    "msmc": "^2.2.2",
+    "typescript": "^4.4.3"
   },
   "devDependencies": {
     "@types/electron": "^1.6.10",

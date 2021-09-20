@@ -1,0 +1,35 @@
+.titlebar {
+    background-color: #1c1c1c;
+    display: flex;
+    height: 45px;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    -webkit-app-region: drag;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.titlebar .icon {
+    -webkit-app-region: no-drag;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+}
+
+.titlebar .icon:hover {
+    background-color: #111111;
+}
+
+.titlebar .close:hover {
+    background-color: red;
+}
+
+.titlebar .app-icon {
+    max-height: 35px;
+}
