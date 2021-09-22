@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>L'épopée libre</title>
+    <link rel="stylesheet" href="./css/default.css" />
+    <link rel="stylesheet" href="./css/settings.css" />
+    <link rel="stylesheet" href="./css/titlebar.css" />
+    <link rel="stylesheet" href="./css/content.css" />
+  </head>
+  <body>
+    <div class="titlebar">
+      <img class="app-icon" src="img/icon.png" />
+      <div style="display: flex">
+        <div onclick="window.api.send('close_settings', {})" class="icon close">
+          <img src="img/cross.svg" />
+        </div>
+      </div>
+    </div>
+    <div class="content">
+        <div class="settings_container">
+            <div class="setting">
+                <div style="display: flex; justify-content: space-between;">
+                    <h2>RAM</h2>
+                    <h2 id="demo"></h2>
+                </div>
+                <div class="slidecontainer">
+                    <input type="range" min="1" max="1" value="50" class="slider" id="ramrange">
+                </div>
+            </div>
+            <div class="setting">
+                <h2>Java</h2>
+                <div class="java">
+                    <span onclick="window.api.send('getJava', {})" class="inputfile" for="file">Javapath</span>
+                    <span style="flex-grow: 1;" class="fakeInput"></span>
+                </div>
+            </div>
+            <div class="setting">
+              <h2>Launcheur</h2>
+              <div class="launcher">
+                  <span style="flex-grow: 1; text-align: center;" onclick="window.api.send('resetVersion', {})" class="inputfile" for="file">Remise à zéro du Launcheur</span>
+              </div>
+          </div>
+        </div>
+    </div>
+
+    <script src="javascript/moment.js"></script>
+    <script src="javascript/settings.js"></script>
+    <script src="../renderer.js"></script>
+  </body>
+</html>

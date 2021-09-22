@@ -51,7 +51,29 @@
           </path>
         </svg>
         <span id="loaderpercent">0%</span>
-        <p>Connexion au compte microsoft</p>
+        <p id="loadermessage"></p>
+      </div>
+      <div style="display: none;" class="loadingscreen">
+        <div>
+          <p id="forge_message">Téléchargement de forge</p>
+          <div class="progress">
+            <div id="forge_progress" class="progressbar"></div>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <p id="forge_percent"></p><p>Total <span id="forge_downloaded"></span>/<span id="forge_total"></span></p>
+          </div>
+        </div>
+
+        <div>
+          <p id="modpack_message">Téléchargement du modpack</p>
+          <div class="progress">
+            <div id="modpack_progress" class="progressbar"></div>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <p id="modpack_percent"></p><p>Total <span id="modpack_downloaded"></span>/<span id="modpack_total"></span></p>
+          </div>
+        </div>
+
       </div>
       <div class="left">
         <div class="header">
@@ -59,25 +81,25 @@
         </div>
         <div style="flex-grow: 0.1"></div>
         <div class="toolbar">
-          <img src="img/cog.svg" />
-          <img src="img/globe.svg" />
+          <img onclick="window.api.send('openSettingWindow', {})" src="img/cog.svg" />
+          <img style="visibility: hidden;" src="img/globe.svg" />
         </div>
         <div class="spacer"></div>
         <div class="main-container">
-          <form action="">
+          <form id="loginform" action="">
             <div class="input-group">
               <label for="">Email</label>
-              <input type="text" name="name" id="name" />
+              <input type="text" id="email" />
             </div>
             <div class="input-group">
               <label for="">Mot de passe</label>
-              <input type="password" />
+              <input type="password" id="password" />
             </div>
             <a class="input-link" onclick="window.api.send('microsoft', {}); document.querySelector('.loader').style.display = 'flex';">
               Je possède un compte Microsoft
             </a>
             <div class="input-group">
-              <input onclick="window.api.send('play_mojang', {})" type="submit" value="Jouer" />
+              <input onclick="mojangAuth()" type="submit" value="Connexion" />
             </div>
           </form>
         </div>

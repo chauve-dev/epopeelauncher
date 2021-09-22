@@ -66,8 +66,14 @@
     cursor: pointer;
 }
 
-.input-group input:hover {
+.input-group input:not([disabled]):hover {
     background-color: #ffffFF30;
+}
+
+.input-group input:disabled {
+    background-color: #1C1C1CAA;
+    color: black;
+    cursor: default;
 }
 
 .input-group {
@@ -104,6 +110,10 @@ form {
     padding: 0 20px;
 }
 
+.toolbar img:hover {
+
+}
+
 .loader {
     position: absolute;
     top: 0;
@@ -117,6 +127,33 @@ form {
     align-items: center;
     justify-content: center;
 }
+
+.progress {
+    width: 40vw;
+    background-color: grey;
+  }
+  
+.progressbar {
+    width: 0%;
+    height: 20px;
+    background-color: #F5F5F5;
+}
+
+.loadingscreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1C1C1CEE;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .loader > svg{
     width: 100px;
     height: 100px;
@@ -167,3 +204,15 @@ form {
 ::-webkit-scrollbar-thumb {
     background: none;
 }
+
+.toolbar img:hover {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .toolbar img:not(:hover){
+   transition: all 0.3s ease-in-out;
+  }
+  
+  .toolbar img:hover {
+    transform: scale(1.2)
+  }

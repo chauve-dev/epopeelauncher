@@ -8,7 +8,7 @@ asar: true
 compression: 'maximum'
 
 files:
-  - '!{dist-electron,.gitignore,.vscode,docs,dev-app-update.yml,.travis.yml,.nvmrc,.eslintrc.json,build.js}'
+  - '!{dist-electron,.gitignore,.vscode,docs,dev-app-update.yml,.travis.yml,.nvmrc,.eslintrc.json,build.js,minecraft,forge.jar,ressources.zip}'
 
 extraResources:
   - 'libraries'
@@ -24,7 +24,7 @@ nsis:
   oneClick: false
   perMachine: false
   allowElevation: true
-  allowToChangeInstallationDirectory: true
+  allowToChangeInstallationDirectory: false
 
 # macOS Configuration
 mac:
