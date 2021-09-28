@@ -10,7 +10,7 @@ contextBridge.exposeInMainWorld(
             }
         },
         receive: (channel: string, func: Function) => {
-            let validChannels = ["fromMain", "fromActu", "fromLogin", "loginUpdate", "update_forge", "update_modpack", "update_done", "enable_button"];
+            let validChannels = ["fromMain", "fromActu", "fromLogin", "loginUpdate", "update_forge", "update_modpack", "update_done", "enable_button", "update-error-launcheur", "download-progress-launcheur"];
             if (validChannels.includes(channel)) {
                 // Deliberately strip event as it includes `sender` 
                 ipcRenderer.on(channel, (event, ...args) => func(...args));

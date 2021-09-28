@@ -30,7 +30,7 @@ window.addEventListener("load", function() {
     });
 
     window.api.receive("update_forge", (data) => {
-        document.querySelector('.loadingscreen').style.display = 'flex';
+        document.querySelector('#modpack_loading').style.display = 'flex';
         this.document.getElementById("forge_progress").style.width = data.progress+"%";
         this.document.getElementById("forge_downloaded").innerHTML = data.downloaded;
         this.document.getElementById("forge_total").innerHTML = data.total;
@@ -38,7 +38,7 @@ window.addEventListener("load", function() {
     });
 
     window.api.receive("update_modpack", (data) => {
-        document.querySelector('.loadingscreen').style.display = 'flex';
+        document.querySelector('#modpack_loading').style.display = 'flex';
         this.document.getElementById("modpack_progress").style.width = data.progress+"%";
         this.document.getElementById("modpack_downloaded").innerHTML = data.downloaded;
         this.document.getElementById("modpack_total").innerHTML = data.total;
@@ -46,7 +46,7 @@ window.addEventListener("load", function() {
     });
 
     this.window.api.receive("update_done", (data) => {
-        document.querySelector('.loadingscreen').style.display = 'none';
+        document.querySelector('#modpack_loading').style.display = 'none';
     });
 
     this.window.api.receive("enable_button", (data) => {
@@ -54,6 +54,19 @@ window.addEventListener("load", function() {
         document.querySelector('#play').disabled = !data;
     });
 
+
+
+    this.window.api.receive("update-error-launcheur", (data) => {
+        document.querySelector('#launcher_loading').style.display = 'none';
+    })
+
+    this.window.api.receive("download-progress-launcheur", (data) => {
+        document.querySelector('#launcher_loading').style.display = 'flex';
+        this.document.getElementById("launcher_progress").style.width = data.progress+"%";
+        this.document.getElementById("launcher_downloaded").innerHTML = data.downloaded;
+        this.document.getElementById("launcher_total").innerHTML = data.total;
+        this.document.getElementById("launcher_percent").innerHTML = data.progress+"%";
+    })
 
     window.api.send("getActu", {});
 });

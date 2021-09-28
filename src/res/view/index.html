@@ -53,7 +53,7 @@
         <span id="loaderpercent">0%</span>
         <p id="loadermessage"></p>
       </div>
-      <div style="display: none;" class="loadingscreen">
+      <div style="display: none;" class="loadingscreen" id="modpack_loading">
         <div>
           <p id="forge_message">Téléchargement de forge</p>
           <div class="progress">
@@ -73,7 +73,17 @@
             <p id="modpack_percent"></p><p>Total <span id="modpack_downloaded"></span>/<span id="modpack_total"></span></p>
           </div>
         </div>
-
+      </div>
+      <div style="display: none;" class="loadingscreen" id="launcher_loading">
+        <div>
+          <p id="launcher_message">Téléchargement du lanceur</p>
+          <div class="progress">
+            <div id="launcher_progress" class="progressbar"></div>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <p id="launcher_percent"></p><p>Total <span id="launcher_downloaded"></span>/<span id="modpack_total"></span></p>
+          </div>
+        </div>
       </div>
       <div class="left">
         <div class="header">

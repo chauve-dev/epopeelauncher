@@ -5,6 +5,7 @@ import axios from "axios";
 import { Game } from "./controllers/game";
 import { Authenticator } from "minecraft-launcher-core";
 import * as Store from "electron-store";
+import { autoUpdater } from "electron-updater";
 
 class Launcher {
 
@@ -46,6 +47,7 @@ class Launcher {
     this.mainWindow.loadFile(path.join(__dirname, "res/view/index.html"));
     this.mainWindow.once("ready-to-show", () => {
       this.mainWindow.show();
+      autoUpdater.checkForUpdatesAndNotify()
     });
   }
 
@@ -157,8 +159,10 @@ ipcMain.on("microsoft", (event: any, arg: any) => {
     }).then((result: any) => {
         //Let's check if we logged in?
         if (msmc.errorCheck(result)){
-            console.log(result.reason)
-            return;
+          event.reply("fromLogin", {
+            logged: false
+          });
+          return;
         }
         if(result.type === "Success"){
 
@@ -237,5 +241,24 @@ ipcMain.on("ram", (event, arg) => {
 });
 
 ipcMain.on("resetVersion", (event, arg) => {
-  store.delete("resetVersion");
+  store.delete("version");
+});
+
+
+autoUpdater.on('error', err => {
+  launcher.getMainWindow().webContents.send('update-error-launcheur', err);
+});
+autoUpdater.on('download-progress', progressObj => {
+  launcher.getMainWindow().webContents.send('download-progress-launcheur', {
+    progress: progressObj.percent,
+    downloaded: progressObj.transferred,
+    total: progressObj.total
+  });
+});
+
+autoUpdater.on('update-downloaded', info => {
+  // Wait 5 seconds, then quit and install
+  // In your application, you don't need to wait 500 ms.
+  // You could call autoUpdater.quitAndInstall(); immediately
+  autoUpdater.quitAndInstall();
 });
