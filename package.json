@@ -1,6 +1,6 @@
 {
   "name": "epopeelauncher",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "productName": "Epopee launcher",
   "description": "Launcheur de l'épopée libre",
   "main": "dist/main.js",
