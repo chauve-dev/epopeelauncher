@@ -147,7 +147,7 @@ ipcMain.on("getActu", async(event: any, data: any) =>{
   axios.get("https://epopee.joeyjeantet.fr/actualites").then((response: any) => {
     event.reply("fromActu", response.data);
   }).catch((error: any) => {
-    console.log("serveur down cannot fetch news");
+    console.log("serveur down impossible de recuperer les actualites");
   });
 });
 
@@ -257,8 +257,5 @@ autoUpdater.on('download-progress', progressObj => {
 });
 
 autoUpdater.on('update-downloaded', info => {
-  // Wait 5 seconds, then quit and install
-  // In your application, you don't need to wait 500 ms.
-  // You could call autoUpdater.quitAndInstall(); immediately
   autoUpdater.quitAndInstall();
 });
