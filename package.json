@@ -1,6 +1,6 @@
 {
   "name": "epopeelauncher",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "productName": "Epopee launcher",
   "description": "Launcheur de l'épopée libre",
   "main": "dist/main.js",
@@ -33,6 +33,7 @@
     "ejs": "^3.1.6",
     "ejs-electron": "^2.1.1",
     "electron-store": "^8.0.1",
+    "electron-updater": "^4.3.9",
     "minecraft-launcher-core": "^3.16.8",
     "msmc": "^2.2.2",
     "node-downloader-helper": "^1.0.18",
@@ -44,7 +45,6 @@
     "copyfiles": "^2.4.1",
     "electron": "^14.0.0",
     "electron-builder": "^22.11.7",
-    "electron-updater": "^4.3.9",
     "rimraf": "^3.0.2"
   }
 }
